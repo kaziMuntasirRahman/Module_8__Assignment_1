@@ -34,6 +34,30 @@ const filterByRating = (
   values.filter((value) => value.rating >= 4);
 
 // ______________________________ problem: 5
-const  filterActiveUsers = (values: {id:number, name: string, email: string, isActive:boolean}[]) : {id:number, name: string, email: string, isActive:boolean}[] => values.filter(value=>value.isActive===true)
+const filterActiveUsers = (
+  values: { id: number; name: string; email: string; isActive: boolean }[]
+): { id: number; name: string; email: string; isActive: boolean }[] =>
+  values.filter((value) => value.isActive === true);
 
 //_______________________________problem: 6
+interface Book {
+  title: string;
+  author: string;
+  publishedYear: number;
+  isAvailable: boolean;
+}
+
+const printBookDetails = (value: Book) => {
+  console.log(
+    `Title: ${value.title}, Author: ${value.author}, Published: ${value.publishedYear}, Available: ${value.isAvailable}`
+  );
+};
+
+const myBook: Book = {
+  title: 'The Great Gatsby',
+  author: 'F. Scott Fitzgerald',
+  publishedYear: 1925,
+  isAvailable: true,
+};
+
+printBookDetails(myBook);
