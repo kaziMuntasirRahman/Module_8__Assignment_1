@@ -23,7 +23,7 @@ class Person {
   }
 
   getDetails() {
-    return `Name: ${this.name}, Age: ${this.age}`;
+    return `'Name: ${this.name}, Age: ${this.age}'`;
   }
 }
 
@@ -53,11 +53,41 @@ const printBookDetails = (value: Book) => {
   );
 };
 
-const myBook: Book = {
-  title: 'The Great Gatsby',
-  author: 'F. Scott Fitzgerald',
-  publishedYear: 1925,
-  isAvailable: true,
+//_________________________________problem: 7
+const getUniqueValues = (
+  arr1: (number | string)[],
+  arr2: (number | string)[]
+): (number | string)[] => { // use loop to measure length
+   let length1 = 0;
+
+   while(arr){
+
+   }
 };
 
-printBookDetails(myBook);
+const array1 = [1, 2, 3, 4, 5];
+const array2 = [3, 4, 5, 6, 7];
+console.log(getUniqueValues(array1, array2));
+
+const calculateTotalPrice = (
+  products: {
+    name: string;
+    price: number;
+    quantity: number;
+    discount?: number;
+  }[]
+): number => {
+  if (products.length === 0) return 0;
+
+  const total = products.reduce((acc, product) => {
+    const { price, quantity, discount } = product;
+    if (discount!==undefined) {
+      return acc += price * quantity * (1 - discount / 100);
+    } else {
+     return acc += price * quantity;
+    }
+  }, 0);
+
+  return total;
+};
+
