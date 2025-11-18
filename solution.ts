@@ -53,21 +53,41 @@ const printBookDetails = (value: Book) => {
   );
 };
 
-//_________________________________problem: 7
-const getUniqueValues = (
-  arr1: (number | string)[],
-  arr2: (number | string)[]
-): (number | string)[] => { // use loop to measure length
-   let length1 = 0;
+// //_________________________________problem: 7
+// const getUniqueValues = (
+//   arr1: (number | string)[],
+//   arr2: (number | string)[]
+// ): (number | string)[] => {
 
-   while(arr){
+//    const getLength = (array: (number | string)[]): number =>{
+//       let length : number = 0;
+//       while(1){
+//          if(array[length]===undefined) break;
+//          length++;
+//       }
+//       return length;
+//    }
 
-   }
-};
+//    const length1:number = getLength(arr1);
+//    const length2:number = getLength(arr2);
 
-const array1 = [1, 2, 3, 4, 5];
-const array2 = [3, 4, 5, 6, 7];
-console.log(getUniqueValues(array1, array2));
+//    let result:(string|number)[] = [];
+//    let length3:number = 0;
+
+//    for(let i = 0 ; i<length1 ; i++){
+//       for(let j = 0 ; j<length2 ; j++){
+//          if(arr1[i]!==arr2[j]){
+//             result[length3] =
+//          }
+//       }
+//    }
+
+//    return result;
+// };
+
+// const array1 = [1, 2, 3, 4, 5];
+// const array2 = [3, 4, 5, 6, 7];
+// console.log(getUniqueValues(array1, array2));
 
 const calculateTotalPrice = (
   products: {
@@ -81,13 +101,12 @@ const calculateTotalPrice = (
 
   const total = products.reduce((acc, product) => {
     const { price, quantity, discount } = product;
-    if (discount!==undefined) {
-      return acc += price * quantity * (1 - discount / 100);
+    if (discount !== undefined) {
+      return (acc += price * quantity * (1 - discount / 100));
     } else {
-     return acc += price * quantity;
+      return (acc += price * quantity);
     }
   }, 0);
 
   return total;
 };
-
